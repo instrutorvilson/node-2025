@@ -1,0 +1,12 @@
+1 - Crie um arquivo saudacao.js que exporta uma função.
+
+2 - Crie um módulo calculadora.js que exporte:soma(a,b),sub(a,b),mult(a,b),
+div(a,b).Use esse módulo em um arquivo principal para testar todas as funções.
+
+3- Crie um módulo usuario.js que exporte um objeto com os atributos Nome, email e fone.
+
+4 - Use o módulo path para:
+   -> Ler o nome do arquivo atual (__filename);
+   -> Ler o diretório atual (__dirname);
+   -> Juntar pastas com path.join;
+   -> Extrair a extensão do arquivo com path.extname
