@@ -1,0 +1,14 @@
+Finalizar cadastro de produto
+-> metodo POST e PUT feito em sala
+-> metodo consultar por id
+-> método excluir
+
+Criar endpoint de clientes
+-> nome
+-> email
+-> senha
+
+
+Criar endpoint de pedidos:
+-> cliente
+-> lista de produtos
