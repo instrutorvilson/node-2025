@@ -2,44 +2,15 @@ const express = require('express');
 const app = express();
 const port = 8080;
 
-const db = require('./conectaDB')
 
-const { validaProduto } = require('./middlewares/middleware')
+const rotasProduto = require('./rotas/produtos')
+const rotasCliente = require('./rotas/clientes')
+
 
 app.use(express.json())
 
-app.post('/api/v1/produto', validaProduto, async (req, res) => {
-   const { nome, preco } = req.body
-   const [result] = await db.execute('insert into produto (nome, preco)values(?,?)',[nome, preco])
-   res.status(201).send({ mensagem:'Produto salvo com sucesso', content: {id:result.insertId, nome, preco}});
-});
-
-app.put('/api/v1/produto/:id', validaProduto, async (req, res) => {
-   const {id, nome, preco } = req.body
-   const result = await db.execute('update produto set nome = ?, preco = ? where id = ?',[nome, preco, id])
-   res.status(200).send({ mensagem:'Produto alterado com sucesso', content: {id:result.insertId, nome, preco}});
-});
-
-app.get('/api/v1/produto', async (req, res) => {
-   const [rows] = await db.execute('select * from produto')
-   res.status(200).json(rows);
-});
-
-app.get('/api/v1/produto/:id', async (req, res) => {
-   const [result] = await db.execute('select * from produto where id = ?',[req.params.id])
-   if(result.length === 0){
-      res.status(404).send({mensagem:'Produto não encontrado'})
-   }
-   res.status(200).json(result[0]);
-});
-
-app.delete('/api/v1/produto/:id', async (req, res) => {
-   const [result] = await db.execute('delete from produto where id = ?',[req.params.id])
-   if(result.affectedRows === 0){
-      res.status(404).send({mensagem:'Produto não encontrado'})
-   }
-   res.status(204).send();
-});
+app.use('/api/v1/produto', rotasProduto)
+app.use('/api/v1/cliente', rotasCliente)
 
 
 /**app.post('/api/v1/produto', (req, res) => { 
