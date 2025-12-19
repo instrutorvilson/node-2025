@@ -1,0 +1,35 @@
+Ativar verificação em duas etapas
+
+No Gmail da conta que envia o e-mail:
+
+Acesse:
+👉 https://myaccount.google.com/security
+
+Ative Verificação em duas etapas
+
+⚠️ Sem isso, o Google não libera senha de aplicativo.
+
+2️⃣ Criar a senha de aplicativo
+
+Ainda em Segurança
+
+Clique em Senhas de app
+
+Selecione:
+
+App: Outro
+
+Nome: Node Automacao
+
+O Google vai gerar algo assim:
+
+abcd efgh ijkl mnop
+
+
+
+
+
+
+
+
+
