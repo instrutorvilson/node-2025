@@ -4,10 +4,12 @@ const app = express();
 const port = 8080;
 
 const rotaUsers = require('./api-users')
+const rotaAuth = require('./auth')
 
 
 app.use(express.json())
 app.use('/api/users', rotaUsers)
+app.use('/api/auth', rotaAuth)
 
 
 app.listen(port, () => {
